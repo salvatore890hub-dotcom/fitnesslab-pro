@@ -1,0 +1,302 @@
+/* ==========================================
+   FITNESSLAB PRO - STILE DEFINITIVO
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #090d16;
+    color: #333;
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+}
+
+/* Master Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* Header con Titolo a sinistra e Login in alto a destra */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.main-header h1 {
+    color: #0f172a;
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.main-header p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+/* Pulsante Login in alto a destra */
+.login-btn {
+    background: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* Griglia a due colonne simmetrica */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Box laterali */
+.calculator-box, .info-box {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.box-title {
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+input[type="number"], input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Pulsante Calcola / Submit */
+button.calc-btn {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+button.calc-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Risultati */
+#results {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#results h3 {
+    color: #1e40af;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #bfdbfe;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+#results p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+#results span {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Immagine compatta e pulita dentro il box di destra */
+.guide-img-container {
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.guide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-box h3 {
+    font-size: 15px;
+    color: #1e293b;
+    margin-top: 15px;
+    margin-bottom: 4px;
+}
+
+.info-box p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Finestra Modale di Login / Registrazione */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #0f172a;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: #0f172a;
+}
+
+/* Stili per le tab della modale (Accedi / Registrati) */
+.modal-tabs {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #64748b;
+    font-size: 13px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+footer a {
+    color: #2563eb;
+    text-decoration: none;
+}
